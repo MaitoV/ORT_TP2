@@ -1,0 +1,13 @@
+{
+  "type": "commonjs",
+  "name": "01-tp-manejo-de-archivos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "node ./test/test-funciones.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
