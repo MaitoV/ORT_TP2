@@ -4,7 +4,11 @@
   "description": "Manejo Asincronico de Archivos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ms.js": "node ./src/ms.js",
+    "mac.js": "node ./src/mac.js",
+    "maptc.js": "node ./src/escrituraLecturaAsincPromesas1.js",
+    "mapaa.js": "node ./src/escrituraLecturaAsincPromesas2.js"
   },
   "author": "Maite Villella",
   "license": "MIT"
