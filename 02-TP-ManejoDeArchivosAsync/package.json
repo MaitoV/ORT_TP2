@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ms.js": "node ./src/ms.js",
-    "mac.js": "node ./src/mac.js",
-    "maptc.js": "node ./src/escrituraLecturaAsincPromesas1.js",
-    "mapaa.js": "node ./src/escrituraLecturaAsincPromesas2.js"
+    "ms": "node ./src/ms.js",
+    "mac": "node ./src/mac.js",
+    "maptc": "node ./src/maptc.js",
+    "mapaa": "node ./src/mapaa.js"
   },
   "author": "Maite Villella",
   "license": "MIT"

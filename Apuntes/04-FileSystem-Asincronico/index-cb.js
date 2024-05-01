@@ -25,7 +25,7 @@ function readWriteFsAsync() {
             console.log('Lectura despues de escribir ', datos)
         })*/
 
-        /* ----------------- ASINCRONISMO CON ORDEN ------------------- */
+        /* ----------------- ASINCRONISMO CON ORDEN - USO DE CALLBACKS------------------- */
         // Los callbacks anidados, si bien evitan que el event loop se cuelgue y se ejecuten en orden, tambien produce anidamiento de codigo y el callback hell
         fs.readFile('./datos.txt', 'utf-8', (error, datos) => { 
             if(error) { throw Error(`Error en lectura asincronica ${error.message}`)}

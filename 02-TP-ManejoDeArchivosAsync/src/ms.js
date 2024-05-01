@@ -14,6 +14,7 @@ try {
         contenidoObj: archivoObjeto,
         size: tamanioArchivo
     }
+    console.log(info);
 
     let infoJSON = JSON.stringify(info);
     fs.writeFileSync(rutaArchivoEscritura, infoJSON);

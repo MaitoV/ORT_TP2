@@ -20,7 +20,7 @@ try {
 
                 info.size = info.size;
             })
-
+            console.log(info);
             let infoJSON = JSON.stringify(info);
 
             fs.writeFile(rutaArchivoEscritura, infoJSON, (error) => {
