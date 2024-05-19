@@ -1,0 +1,15 @@
+{
+  "type": "commonjs",
+  "name": "05-servidor_http_nativo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server_base.js",
+    "dev": "nodemon server_base.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
