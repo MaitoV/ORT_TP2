@@ -7,8 +7,14 @@
     <title>Pagina web</title>
 </head>
 <body>
-    <h1>Bienvenidos a nuestra web</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur voluptatem, maiores ducimus reiciendis consectetur eos maxime blanditiis suscipit quod, quasi ullam similique recusandae praesentium nobis odit voluptate? Sunt, sit?</p>
+    <h1>Formulario de envio</h1>
+    <form action="/datos/" method="POST">
+        <label>Nombre:</label>
+        <input name="nombre" type="text">
+        <label>Edad:</label>
+        <input name="edad" type="number">
+        <input type="submit" value="Enviar">
+    </form>
     
     <script src="js/main"></script>
 </body>

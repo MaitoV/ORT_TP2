@@ -7,6 +7,34 @@ const controladorRutaDefault = (req, res) => {
     const {url, method} = req;
     res.status(500).send(`Error en la ruta ${method} : ${url} no implementada`);
 }
+/* ======= CREANDO MI PROPIO MIDDLEWARE ============== */
+const miMiddleware = (req, res, next) => {
+    // next sirve para pasarle la informacion a la siguiente etapa del middelware
+    console.log('URL ' + req.url);
+    console.log('METHOD ' + req.method);
+    // res.send('Entre al middleware personalizado'); -> Aca responde directamente al usuario
+    next();
+}
+const miMiddleware2 = (req, res, next) => {
+    console.log('Fecha y Hora ' + new Date().toLocaleString());
+    next()
+}
+const middlewareDeRuta = (req, res, next) => {
+    let {body} = req;
+    console.log(body);
+    next();
+}
+/* MIDDLEWARE A NIVEL APLICACION: son middleware que se ejecutan siempre con cada peticion independientemente de la ruta o del metodo */
+app.use(miMiddleware);
+app.use(miMiddleware2);
+/* =========== DEFINIENDO MIDDLEWARE DE BODY-PARSER  ================== 
+======================================================================= */
+// body-parser es un middleware que se encarga de decodificar el body del pquete http
+// Este midleware habilita la decodificacion de url-enconded que viaja en el body del paquete http
+app.use(express.urlencoded({extended:true}));
+// este otro middleware habilita la decodificacion de json que viaja en el paquete body de http
+app.use(express.json());
+
 /* =========== DEFINIENDO EL SERVICIO DE ARCHIVOS ESTATICOS  ================== 
 =============================================================================== */
 app.use(express.static('public')); // registramos el middleware con la ruta relativa a la carpeta de recursos estaticos
@@ -32,11 +60,28 @@ app.get('/', (req, res) => {
 app.get('/time', (req, res) => {
     res.send(`<h1 style="color:green">Son las ${new Date().toLocaleString()}</h1>`);
 })
+/* ============= PARAMS OPCIONALES ==================== */
+app.get('/datos', (req, res) => {
+    const query = req.query;
+    console.log(query);
+    res.json({query})
+})
+/* ============= ROUTE PARAMS ==================== */
+app.get('/datos/:producto/:id/:color?', (req, res) => { // con el signo de pregunta hacemos un route params opcional que puede o no estar ahi
+    const params = req.params
+    let {producto, id} = req.params;
+    console.log(params);
+    res.json({params})
+})
 //Este metodo sirve para el resto de las rutas que no estan creadas arriba, se ejecuta este
 // Esta ruta por default debe colocarse AL FINAL de todas las rutas
 app.get('*', controladorRutaDefault)
 /* =========== DEFINIENDO RUTAS O ENDPOINTS POST ==================
 =============================================================================== */
+app.post('/datos', middlewareDeRuta, (req, res) => {
+    res.json(req.body);
+})
+
 app.post('*', controladorRutaDefault)
 /* =========== DEFINIENDO RUTAS O ENDPOINTS PUT ==================
 =============================================================================== */
