@@ -1,0 +1,15 @@
+{
+  "name": "02-tp-manejodearchivosasync",
+  "version": "0.0.1",
+  "description": "Manejo Asincronico de Archivos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ms": "node ./src/ms.js",
+    "mac": "node ./src/mac.js",
+    "maptc": "node ./src/maptc.js",
+    "mapaa": "node ./src/mapaa.js"
+  },
+  "author": "Maite Villella",
+  "license": "MIT"
+}

@@ -1,0 +1,14 @@
+[
+	{
+		"id": "1",
+		"nombre": "monstera",
+		"precio": 2450.89,
+		"stock": 5
+	},
+	{
+		"id": "2",
+		"nombre": "maceta",
+		"precio": 1.99,
+		"stock": 19
+	}
+]
